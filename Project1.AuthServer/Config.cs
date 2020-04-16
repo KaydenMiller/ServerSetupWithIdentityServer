@@ -35,7 +35,11 @@ namespace Project1.AuthServer
                 }
             }
         };
-        
-        
+
+        public static IEnumerable<IdentityResource> Ids => new List<IdentityResource>
+        {
+            new IdentityResources.OpenId(),
+            new IdentityResources.Profile()
+        };
     }
 }
