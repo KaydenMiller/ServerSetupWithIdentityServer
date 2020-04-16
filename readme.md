@@ -1,6 +1,10 @@
 ﻿# How to get this template setup
 There are several things that need to be done to configure this template.
 
+## Documentation Used
+* [IdentityServer4](https://identityserver4.readthedocs.io/en/latest/)
+* [Template Builder Tutorial](https://www.ecanarys.com/Blogs/ArticleID/180/Create-custom-project-templates-in-Visual-Studio)
+
 ## Recommended Changes
 * Change the ports for the applications to be different from the standard ports to avoid
   conflicts with other applications.
@@ -16,4 +20,4 @@ Search the project for any `TODO:` comments an they should point you to changes 
 ## For Production
 * Change the developer signing credential to be a production one
 * Configure SSL
-* Configure Kestrel or your chosen proxy service
+* ###### Configure Kestrel or your chosen proxy service
