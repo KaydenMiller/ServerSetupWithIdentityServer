@@ -6,6 +6,12 @@
 
     <ItemGroup>
       <PackageReference Include="IdentityServer4" Version="3.1.2" />
+      <PackageReference Include="IdentityServer4.AspNetIdentity" Version="3.1.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Project1.Data.DataAccess\Project1.Data.DataAccess.csproj" />
+      <ProjectReference Include="..\Project1.Shared\Project1.Shared.csproj" />
     </ItemGroup>
 
 </Project>
