@@ -20,4 +20,4 @@ Search the project for any `TODO:` comments an they should point you to changes 
 ## For Production
 * Change the developer signing credential to be a production one
 * Configure SSL
-* ###### Configure Kestrel or your chosen proxy service
+* Configure Kestrel or your chosen proxy service
