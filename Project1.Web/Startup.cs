@@ -1,15 +1,11 @@
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using Project1.AuthServer.Core;
 
 namespace Project1.Web
 {
@@ -31,18 +27,18 @@ namespace Project1.Web
 
             services.AddAuthentication(options =>
                 {
-                    options.DefaultScheme = "Cookies";
-                    options.DefaultChallengeScheme = "oidc"; // This is OpenIDConnect
+                    options.DefaultScheme = AuthenticationSchemes.Cookies;
+                    options.DefaultChallengeScheme = AuthenticationChallengeSchemes.OpenIDConnect;
                 })
-                .AddCookie("Cookies")
-                .AddOpenIdConnect("oidc", options =>
+                .AddCookie(AuthenticationSchemes.Cookies)
+                .AddOpenIdConnect(AuthenticationChallengeSchemes.OpenIDConnect, options =>
                 {
                     options.Authority = "http://localhost:5000"; //TODO: replace this with your URL to the IdentityServer4 server
                     options.RequireHttpsMetadata = false;
 
                     options.ClientId = "mvc";
                     options.ClientSecret = "secret";
-                    options.ResponseType = "code";
+                    options.ResponseType = OpenIdConnectResponseType.Code;
 
                     options.SaveTokens = true;
                 });

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Project1.AuthServer.Core;
 using Project1.Web.Models;
 
 namespace Project1.Web.Controllers
@@ -25,7 +22,7 @@ namespace Project1.Web.Controllers
 
         public IActionResult Logout()
         {
-            return SignOut("Cookies", "oidc");
+            return SignOut(AuthenticationSchemes.Cookies, AuthenticationChallengeSchemes.OpenIDConnect);
         }
 
         public IActionResult Privacy()
